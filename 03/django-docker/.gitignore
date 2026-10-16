@@ -1,0 +1,37 @@
+# --- Django / Python ---
+*.py[cod]
+*$py.class
+__pycache__/
+.env
+db.sqlite3
+/static/
+/media/
+/staticfiles/
+
+# --- Docker ---
+.dockerignore
+# (Opcjonalnie: nie ignoruj .dockerignore, ale zignoruj dane z kontenerów)
+docker-compose.override.yml
+
+# --- Środowisko wirtualne (jeśli tworzysz je lokalnie poza Dockerem) ---
+venv/
+env/
+.venv/
+ENV/
+
+# --- Bazy danych (jeśli mapujesz wolumeny do folderu w projekcie) ---
+postgres_data/
+mysql_data/
+redis_data/
+
+# --- Narzędzia / IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# --- Logi i paczki ---
+*.log
+dist/
+build/

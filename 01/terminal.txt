@@ -1,0 +1,21 @@
+PS C:\Users\Maciej\Desktop\DevMentor\practice-django-containerization\01> docker run -it --name python-test python:3.12
+Python 3.12.16 (main, Oct 28 2026, 04:34:44) [GCC 14.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import sys
+>>> print(sys.version)
+3.12.16 (main, Oct 28 2026, 04:34:44) [GCC 14.2.0]
+>>> a = 2 + 2
+>>> print(a)
+4
+>>> print(sys.platform)
+linux
+>>> exit()
+PS C:\Users\Maciej\Desktop\DevMentor\practice-django-containerization\01> docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+PS C:\Users\Maciej\Desktop\DevMentor\practice-django-containerization\01> docker ps -a
+CONTAINER ID   IMAGE         COMMAND                  CREATED          STATUS                          PORTS     NAMES
+89929b431c4d   python:3.12   "python3"                3 minutes ago    Exited (0) About a minute ago             python-test
+fac2e6f72c6e   python:3.12   "--name python-test"     10 minutes ago   Created                                   youthful_wing
+f7053d23d181   python:3.12   "python3 -m http.ser…"   4 hours ago      Exited (137) 4 hours ago                  trening-web-1
+36d6fc10fe2a   nginx         "/docker-entrypoint.…"   23 hours ago     Exited (0) 4 hours ago                    eloquent_gould
+PS C:\Users\Maciej\Desktop\DevMentor\practice-django-containerization\01> 

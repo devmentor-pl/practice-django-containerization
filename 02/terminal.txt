@@ -1,0 +1,15 @@
+PS C:\Users\Maciej\Desktop\DevMentor\practice-django-containerization\02> docker run -d --name nginx-server -p 8080:80 nginx
+f204838fe3ef8a035414cdb8507852e00e34479d3003962b0bc50e7677ccdb47
+PS C:\Users\Maciej\Desktop\DevMentor\practice-django-containerization\02> docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                  NAMES
+f204838fe3ef   nginx     "/docker-entrypoint.…"   5 seconds ago   Up 5 seconds   0.0.0.0:8080->80/tcp   nginx-server
+PS C:\Users\Maciej\Desktop\DevMentor\practice-django-containerization\02> docker stop nginx-server
+nginx-server
+PS C:\Users\Maciej\Desktop\DevMentor\practice-django-containerization\02> docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+PS C:\Users\Maciej\Desktop\DevMentor\practice-django-containerization\02> docker start nginx-server
+nginx-server
+PS C:\Users\Maciej\Desktop\DevMentor\practice-django-containerization\02> docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS         PORTS                  NAMES
+f204838fe3ef   nginx     "/docker-entrypoint.…"   27 seconds ago   Up 4 seconds   0.0.0.0:8080->80/tcp   nginx-server
+PS C:\Users\Maciej\Desktop\DevMentor\practice-django-containerization\02> 

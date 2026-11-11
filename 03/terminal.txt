@@ -1,0 +1,31 @@
+(venv) PS C:\Users\Maciej\Desktop\DevMentor\practice-django-containerization\03> docker build -t django-app .  
+[+] Building 13.2s (10/10) FINISHED                                                                                                                    docker:desktop-linux
+ => [internal] load build definition from dockerfile                                                                                                                   0.0s
+ => => transferring dockerfile: 213B                                                                                                                                   0.0s
+ => [internal] load metadata for docker.io/library/python:3.12                                                                                                         0.0s
+ => [internal] load .dockerignore                                                                                                                                      0.0s
+ => => transferring context: 2B                                                                                                                                        0.0s
+ => [1/5] FROM docker.io/library/python:3.12@sha256:17b9724493d916f56565c131f389faff2597f46dec6ce09516f95125bc9f519f                                                   1.2s
+ => => resolve docker.io/library/python:3.12@sha256:17b9724493d916f56565c131f389faff2597f46dec6ce09516f95125bc9f519f                                                   1.2s
+ => [internal] load build context                                                                                                                                      1.7s
+ => => transferring context: 793.29kB                                                                                                                                  1.7s
+ => CACHED [2/5] WORKDIR /app                                                                                                                                          0.0s
+ => CACHED [3/5] COPY requirements.txt .                                                                                                                               0.0s
+ => CACHED [4/5] RUN pip install --no-cache-dir -r requirements.txt                                                                                                    0.0s
+ => [5/5] COPY . .                                                                                                                                                     3.1s
+ => exporting to image                                                                                                                                                 7.8s
+ => => exporting layers                                                                                                                                                3.0s
+ => => exporting manifest sha256:0809fb73895409233feee886ba35737a8636b148acc49e7c14b719713db12958                                                                      0.0s
+ => => exporting config sha256:3ee575aa59071be41a2731b7128bb6b980d5fbaa686c2fc40cb7b1df6101e4e5                                                                        0.0s
+ => => exporting attestation manifest sha256:067948c117db4de28ba785f8f2c14579ece2c17e141e95cf35b658812c28d549                                                          0.0s
+ => => exporting manifest list sha256:d028e9e769824ca5f8eeb364698f3f83cd7c36112f8c007ee06db982442e00a1                                                                 0.0s
+ => => naming to docker.io/library/django-app:latest                                                                                                                   0.0s
+ => => unpacking to docker.io/library/django-app:latest                                                                                                                4.6s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/8kytnju975huc9gily5lkltwt
+(venv) PS C:\Users\Maciej\Desktop\DevMentor\practice-django-containerization\03> docker run -d --name django-server -p 8000:8000 django-app
+548f0d7ba43fdb0d6d945d842b243ffe4e5d75b2ef6b68e4021d3ea800fdc2ba
+(venv) PS C:\Users\Maciej\Desktop\DevMentor\practice-django-containerization\03> docker ps
+CONTAINER ID   IMAGE        COMMAND                  CREATED         STATUS         PORTS                    NAMES
+548f0d7ba43f   django-app   "python manage.py ru…"   5 seconds ago   Up 5 seconds   0.0.0.0:8000->8000/tcp   django-server
+(venv) PS C:\Users\Maciej\Desktop\DevMentor\practice-django-containerization\03> 
